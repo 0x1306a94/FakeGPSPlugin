@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'FakeGPS-Plugin' target in the 'FakeGPS-Plugin' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
