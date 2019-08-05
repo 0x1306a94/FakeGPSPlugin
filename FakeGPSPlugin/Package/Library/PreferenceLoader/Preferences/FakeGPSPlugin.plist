@@ -7,9 +7,9 @@
 		<key>cell</key>
 		<string>PSLinkCell</string>
 		<key>icon</key>
-		<string>FakeGPS_PluginIcon.png</string>
+		<string>FakeGPSPluginIcon.png</string>
 		<key>label</key>
-		<string>FakeGPS_Plugin</string>
+		<string>FakeGPSPlugin</string>
 	</dict>
 	<key>items</key>
 	<array>
@@ -189,7 +189,6 @@
 			<key>PostNotification</key>
 			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
 		</dict>
-
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -204,6 +203,6 @@
 		</dict>
 	</array>
 	<key>title</key>
-	<string>FakeGPS-Plugin</string>
+	<string>FakeGPSPlugin</string>
 </dict>
 </plist>
