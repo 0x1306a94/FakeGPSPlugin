@@ -14,16 +14,13 @@
 #endif
 
 #import "CaptainHook/CaptainHook.h"
-#import "Aspects.h"
 #import <CoreLocation/CoreLocation.h>
 #import <UIKit/UIKit.h>
 #include <notify.h>  // not required; for examples only
 
-#ifdef DEBUG
-#define LOG(fmt, ...) NSLog((@"fake gps: " fmt), ##__VA_ARGS__);
-#else
-#define LOG(...);
-#endif
+#import "Aspects.h"
+
+#import "CommonDefs.h"
 
 // Objective-C runtime hooking using CaptainHook:
 //   1. declare class using CHDeclareClass()
@@ -33,7 +30,7 @@
 //   5. (optionally) call old method using CHSuper()
 
 //CHDeclareClass(CLLocation)
-CHDeclareClass(CLLocationManager)
+CHDeclareClass(CLLocationManager);
 
 //CHOptimizedMethod0(self, CLLocationCoordinate2D, CLLocation, coordinate) {
 //    //    CLLocationCoordinate2D orign = CHSuper0(CLLocation, coordinate);
@@ -43,58 +40,72 @@ CHDeclareClass(CLLocationManager)
 //}
 
 CHOptimizedMethod1(self, void, CLLocationManager, setDelegate, id<CLLocationManagerDelegate>, delegate) {
-    LOG(@"CLLocationManager delegate -> %@", self);
-    CHSuper1(CLLocationManager, setDelegate, delegate);
-    if (delegate) {
+	LOG(@"CLLocationManager delegate -> %@", self);
+	CHSuper1(CLLocationManager, setDelegate, delegate);
+	if (delegate) {
+		/* clang-format off */
         [(NSObject *)delegate aspect_hookSelector:@selector(locationManager:didUpdateLocations:) withOptions:AspectPositionBefore usingBlock:^(id<AspectInfo> aspectInfo) {
             LOG(@"locationManager:didUpdateLocations: arguments -> %@", aspectInfo.arguments);
-            NSArray<CLLocation *> *fakeLocations = @[[[CLLocation alloc] initWithLatitude:35.680723 longitude:103.851502]];
-            [aspectInfo.originalInvocation setArgument:&fakeLocations atIndex:3];
+            if ([[NSFileManager defaultManager] fileExistsAtPath:kFakeGPSFilePath]) {
+                NSDictionary *info = [[NSDictionary alloc] initWithContentsOfFile:kFakeGPSFilePath];
+                LOG(@"%@", info);
+                if (![info[kFakeStopKey] boolValue]) {
+                    CLLocationDegrees latitude = [info[kFakeLatitudeKey] doubleValue];
+                    CLLocationDegrees longitude = [info[kFakeLongitudeKey] doubleValue];
+                    if (CLLocationCoordinate2DIsValid(CLLocationCoordinate2DMake(latitude, longitude))) {
+                        NSArray<CLLocation *> *fakeLocations = @[[[CLLocation alloc] initWithLatitude:latitude longitude:longitude]];
+                        [aspectInfo.originalInvocation setArgument:&fakeLocations atIndex:3];
+                    }
+                }
+            } else {
+//                NSArray<CLLocation *> *fakeLocations = @[[[CLLocation alloc] initWithLatitude:35.680723 longitude:103.851502]];
+//                [aspectInfo.originalInvocation setArgument:&fakeLocations atIndex:3];
+            }
+
         } error:nil];
-    }
+		/* clang-format on */
+	}
 }
 
 static void WillEnterForeground(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    // not required; for example only
-    LOG(@"com.0x1306a94.hook-gps: %s", __FUNCTION__);
+	// not required; for example only
+	LOG(@"%s", __FUNCTION__);
 }
 
 static void ExternallyPostedNotification(CFNotificationCenterRef center, void *observer, CFStringRef name, const void *object, CFDictionaryRef userInfo) {
-    // not required; for example only
+	// not required; for example only
 }
 
 CHConstructor  // code block that runs immediately upon load
 {
-    @autoreleasepool {
-        // listen for local notification (not required; for example only)
-        CFNotificationCenterRef center = CFNotificationCenterGetLocalCenter();
-        CFNotificationCenterAddObserver(center, NULL, WillEnterForeground, CFSTR("UIApplicationWillEnterForegroundNotification"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+	@autoreleasepool {
+		// listen for local notification (not required; for example only)
+		CFNotificationCenterRef center = CFNotificationCenterGetLocalCenter();
+		CFNotificationCenterAddObserver(center, NULL, WillEnterForeground, CFSTR("UIApplicationWillEnterForegroundNotification"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 
-        // listen for system-side notification (not required; for example only)
-        // this would be posted using: notify_post("com.0x1306a94.hook-gps.eventname");
-        CFNotificationCenterRef darwin = CFNotificationCenterGetDarwinNotifyCenter();
-        CFNotificationCenterAddObserver(darwin, NULL, ExternallyPostedNotification, CFSTR("com.0x1306a94.hook-gps.eventname"), NULL, CFNotificationSuspensionBehaviorCoalesce);
+		// listen for system-side notification (not required; for example only)
+		// this would be posted using: notify_post("com.0x1306a94.hook-gps.eventname");
+		CFNotificationCenterRef darwin = CFNotificationCenterGetDarwinNotifyCenter();
+		CFNotificationCenterAddObserver(darwin, NULL, ExternallyPostedNotification, CFSTR("com.0x1306a94.hook-gps.eventname"), NULL, CFNotificationSuspensionBehaviorCoalesce);
 
-        // CHLoadClass(CLLocation);  // load class (that is "available now")
-        // CHLoadLateClass(ClassToHook);  // load class (that will be "available later")
-        //        CHLoadClass(CLLocation);
-        //        CHHook1(CLLocationManager, setDelegate);
+		// CHLoadClass(CLLocation);  // load class (that is "available now")
+		// CHLoadLateClass(ClassToHook);  // load class (that will be "available later")
+		//        CHLoadClass(CLLocation);
+		//        CHHook1(CLLocationManager, setDelegate);
 
-        //        CHLoadClass(CLLocation);
-        CHLoadClass(CLLocationManager);
+		//        CHLoadClass(CLLocation);
+		CHLoadClass(CLLocationManager);
 
-        //        CHHook0(CLLocation, coordinate);
-        CHHook1(CLLocationManager, setDelegate);
+		//        CHHook0(CLLocation, coordinate);
+		CHHook1(CLLocationManager, setDelegate);
 
-
-        //        [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
-        //
-        //            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"FakeGPS" message:nil preferredStyle:UIAlertControllerStyleAlert];
-        //
-        //            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
-        //
-        //            [UIApplication.sharedApplication.delegate.window.rootViewController presentViewController:alert animated:YES completion:nil];
-        //        }];
-
-    }
+		//        [[NSNotificationCenter defaultCenter] addObserverForName:UIApplicationDidBecomeActiveNotification object:nil queue:nil usingBlock:^(NSNotification * _Nonnull note) {
+		//
+		//            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"FakeGPS" message:nil preferredStyle:UIAlertControllerStyleAlert];
+		//
+		//            [alert addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
+		//
+		//            [UIApplication.sharedApplication.delegate.window.rootViewController presentViewController:alert animated:YES completion:nil];
+		//        }];
+	}
 }

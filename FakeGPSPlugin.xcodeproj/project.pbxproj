@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		323285922C508EF53258F318 /* Pods_FakeGPSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 524EA4B7899B28EB0DFB4B76 /* Pods_FakeGPSUITests.framework */; };
 		3C1D417722F414D50091F7B3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1D417622F414D50091F7B3 /* Foundation.framework */; };
 		3C1D418522F414D50091F7B3 /* FakeGPSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D418422F414D50091F7B3 /* FakeGPSPlugin.mm */; };
 		3C1D418F22F414EA0091F7B3 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1D418E22F414EA0091F7B3 /* CoreLocation.framework */; };
@@ -18,8 +19,10 @@
 		3C1D41A622F415C20091F7B3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D41A522F415C20091F7B3 /* main.m */; };
 		3C1D41B022F415C20091F7B3 /* FakeGPSTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D41AF22F415C20091F7B3 /* FakeGPSTests.m */; };
 		3C1D41BB22F415C30091F7B3 /* FakeGPSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D41BA22F415C30091F7B3 /* FakeGPSUITests.m */; };
-		3C74EB1522F7C12400C2007C /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C74EB1322F7C12400C2007C /* Aspects.m */; };
-		3C74EB1622F7C12400C2007C /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C74EB1422F7C12400C2007C /* Aspects.h */; };
+		3C2F681F230A509500A1F6ED /* Aspects.h in Headers */ = {isa = PBXBuildFile; fileRef = 3C2F681D230A509500A1F6ED /* Aspects.h */; };
+		3C2F6820230A509500A1F6ED /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F681E230A509500A1F6ED /* Aspects.m */; };
+		4433B7580A26F3A7E414A2DD /* Pods_FakeGPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CC64B3EC19E8C3B84FBEA7EA /* Pods_FakeGPSTests.framework */; };
+		F8551456AF93AE3AA5CE72ED /* Pods_FakeGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA7EA8D617324C2A61C11722 /* Pods_FakeGPS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,8 +69,19 @@
 		3C1D41B622F415C20091F7B3 /* FakeGPSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FakeGPSUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C1D41BA22F415C30091F7B3 /* FakeGPSUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FakeGPSUITests.m; sourceTree = "<group>"; };
 		3C1D41BC22F415C30091F7B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3C74EB1322F7C12400C2007C /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
-		3C74EB1422F7C12400C2007C /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		3C2F681C230A3ECB00A1F6ED /* CommonDefs.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonDefs.h; sourceTree = "<group>"; };
+		3C2F681D230A509500A1F6ED /* Aspects.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Aspects.h; sourceTree = "<group>"; };
+		3C2F681E230A509500A1F6ED /* Aspects.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Aspects.m; sourceTree = "<group>"; };
+		3D6FB76C9C70B63F72481026 /* Pods-FakeGPSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSUITests.release.xcconfig"; path = "Target Support Files/Pods-FakeGPSUITests/Pods-FakeGPSUITests.release.xcconfig"; sourceTree = "<group>"; };
+		524EA4B7899B28EB0DFB4B76 /* Pods_FakeGPSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeGPSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		82F8315CAC01D847918A9FB6 /* Pods-FakeGPSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSTests.release.xcconfig"; path = "Target Support Files/Pods-FakeGPSTests/Pods-FakeGPSTests.release.xcconfig"; sourceTree = "<group>"; };
+		8D8BDB6B561B5CF97F307322 /* Pods-FakeGPSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSUITests.debug.xcconfig"; path = "Target Support Files/Pods-FakeGPSUITests/Pods-FakeGPSUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		9C1437B5B16AEA30DCF1427B /* Pods-FakeGPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPS.release.xcconfig"; path = "Target Support Files/Pods-FakeGPS/Pods-FakeGPS.release.xcconfig"; sourceTree = "<group>"; };
+		A397702211DD74E67EB51C47 /* Pods-FakeGPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPS.debug.xcconfig"; path = "Target Support Files/Pods-FakeGPS/Pods-FakeGPS.debug.xcconfig"; sourceTree = "<group>"; };
+		CA48740CF738ECB0A0D0AB56 /* Pods_FakeGPSPlugin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeGPSPlugin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA7EA8D617324C2A61C11722 /* Pods_FakeGPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeGPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC64B3EC19E8C3B84FBEA7EA /* Pods_FakeGPSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_FakeGPSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4823645C8AF0B2F05C48994 /* Pods-FakeGPSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSTests.debug.xcconfig"; path = "Target Support Files/Pods-FakeGPSTests/Pods-FakeGPSTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +98,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F8551456AF93AE3AA5CE72ED /* Pods_FakeGPS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4433B7580A26F3A7E414A2DD /* Pods_FakeGPSTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,21 +114,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				323285922C508EF53258F318 /* Pods_FakeGPSUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17F999FE4A5668C226432F07 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9C1437B5B16AEA30DCF1427B /* Pods-FakeGPS.release.xcconfig */,
+				A397702211DD74E67EB51C47 /* Pods-FakeGPS.debug.xcconfig */,
+				82F8315CAC01D847918A9FB6 /* Pods-FakeGPSTests.release.xcconfig */,
+				E4823645C8AF0B2F05C48994 /* Pods-FakeGPSTests.debug.xcconfig */,
+				3D6FB76C9C70B63F72481026 /* Pods-FakeGPSUITests.release.xcconfig */,
+				8D8BDB6B561B5CF97F307322 /* Pods-FakeGPSUITests.debug.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		3C1D416922F414D50091F7B3 = {
 			isa = PBXGroup;
 			children = (
+				3C2F681B230A3EB500A1F6ED /* Common */,
 				3C1D417822F414D50091F7B3 /* FakeGPSPlugin */,
 				3C1D419522F415C10091F7B3 /* FakeGPS */,
 				3C1D41AE22F415C20091F7B3 /* FakeGPSTests */,
 				3C1D41B922F415C30091F7B3 /* FakeGPSUITests */,
 				3C1D417522F414D50091F7B3 /* Frameworks */,
 				3C1D417422F414D50091F7B3 /* Products */,
+				17F999FE4A5668C226432F07 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -132,6 +164,10 @@
 			children = (
 				3C1D418E22F414EA0091F7B3 /* CoreLocation.framework */,
 				3C1D417622F414D50091F7B3 /* Foundation.framework */,
+				CA7EA8D617324C2A61C11722 /* Pods_FakeGPS.framework */,
+				CC64B3EC19E8C3B84FBEA7EA /* Pods_FakeGPSTests.framework */,
+				524EA4B7899B28EB0DFB4B76 /* Pods_FakeGPSUITests.framework */,
+				CA48740CF738ECB0A0D0AB56 /* Pods_FakeGPSPlugin.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -139,9 +175,9 @@
 		3C1D417822F414D50091F7B3 /* FakeGPSPlugin */ = {
 			isa = PBXGroup;
 			children = (
+				3C2F681D230A509500A1F6ED /* Aspects.h */,
+				3C2F681E230A509500A1F6ED /* Aspects.m */,
 				3C1D418422F414D50091F7B3 /* FakeGPSPlugin.mm */,
-				3C74EB1422F7C12400C2007C /* Aspects.h */,
-				3C74EB1322F7C12400C2007C /* Aspects.m */,
 				3C1D417922F414D50091F7B3 /* Package */,
 				3C1D418222F414D50091F7B3 /* Supporting Files */,
 			);
@@ -250,6 +286,14 @@
 			path = FakeGPSUITests;
 			sourceTree = "<group>";
 		};
+		3C2F681B230A3EB500A1F6ED /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				3C2F681C230A3ECB00A1F6ED /* CommonDefs.h */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -257,7 +301,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C74EB1622F7C12400C2007C /* Aspects.h in Headers */,
+				3C2F681F230A509500A1F6ED /* Aspects.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,9 +330,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C1D41BD22F415C30091F7B3 /* Build configuration list for PBXNativeTarget "FakeGPS" */;
 			buildPhases = (
+				08A7223EDDB625B568C48871 /* [CP] Check Pods Manifest.lock */,
 				3C1D419022F415C10091F7B3 /* Sources */,
 				3C1D419122F415C10091F7B3 /* Frameworks */,
 				3C1D419222F415C10091F7B3 /* Resources */,
+				054F70A15C689FC4B136DFCA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -303,6 +349,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C1D41C022F415C30091F7B3 /* Build configuration list for PBXNativeTarget "FakeGPSTests" */;
 			buildPhases = (
+				DE7B9463F2352B5ACF5D3867 /* [CP] Check Pods Manifest.lock */,
 				3C1D41A722F415C20091F7B3 /* Sources */,
 				3C1D41A822F415C20091F7B3 /* Frameworks */,
 				3C1D41A922F415C20091F7B3 /* Resources */,
@@ -321,6 +368,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C1D41C322F415C30091F7B3 /* Build configuration list for PBXNativeTarget "FakeGPSUITests" */;
 			buildPhases = (
+				66061A4EB30FFB5322EBD3D5 /* [CP] Check Pods Manifest.lock */,
 				3C1D41B222F415C20091F7B3 /* Sources */,
 				3C1D41B322F415C20091F7B3 /* Frameworks */,
 				3C1D41B422F415C20091F7B3 /* Resources */,
@@ -408,6 +456,45 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		054F70A15C689FC4B136DFCA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FakeGPS/Pods-FakeGPS-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-FakeGPS/Pods-FakeGPS-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-FakeGPS/Pods-FakeGPS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		08A7223EDDB625B568C48871 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FakeGPS-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		3C1D417122F414D50091F7B3 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -425,6 +512,50 @@
 			shellPath = /bin/sh;
 			shellScript = "/opt/MonkeyDev/bin/md --xcbp\n";
 		};
+		66061A4EB30FFB5322EBD3D5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FakeGPSUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DE7B9463F2352B5ACF5D3867 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-FakeGPSTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -433,7 +564,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1D418522F414D50091F7B3 /* FakeGPSPlugin.mm in Sources */,
-				3C74EB1522F7C12400C2007C /* Aspects.m in Sources */,
+				3C2F6820230A509500A1F6ED /* Aspects.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -584,6 +715,7 @@
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -616,6 +748,7 @@
 				MonkeyDevInstallOnAnyBuild = YES;
 				MonkeyDevInstallOnProfiling = YES;
 				MonkeyDevkillProcessOnInstall = SpringBoard;
+				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -624,6 +757,7 @@
 		};
 		3C1D41BE22F415C30091F7B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9C1437B5B16AEA30DCF1427B /* Pods-FakeGPS.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -685,6 +819,7 @@
 		};
 		3C1D41BF22F415C30091F7B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A397702211DD74E67EB51C47 /* Pods-FakeGPS.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -746,6 +881,7 @@
 		};
 		3C1D41C122F415C30091F7B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 82F8315CAC01D847918A9FB6 /* Pods-FakeGPSTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -809,6 +945,7 @@
 		};
 		3C1D41C222F415C30091F7B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E4823645C8AF0B2F05C48994 /* Pods-FakeGPSTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -871,6 +1008,7 @@
 		};
 		3C1D41C422F415C30091F7B3 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D6FB76C9C70B63F72481026 /* Pods-FakeGPSUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -933,6 +1071,7 @@
 		};
 		3C1D41C522F415C30091F7B3 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8D8BDB6B561B5CF97F307322 /* Pods-FakeGPSUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;

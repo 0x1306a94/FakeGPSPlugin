@@ -1,0 +1,6 @@
+framework module Pods_FakeGPSTests {
+  umbrella header "Pods-FakeGPSTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
