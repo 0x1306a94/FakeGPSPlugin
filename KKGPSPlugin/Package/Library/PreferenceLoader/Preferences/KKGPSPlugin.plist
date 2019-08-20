@@ -7,9 +7,9 @@
 		<key>cell</key>
 		<string>PSLinkCell</string>
 		<key>icon</key>
-		<string>FakeGPSPluginIcon.png</string>
+		<string>KKGPSPluginIcon.png</string>
 		<key>label</key>
-		<string>FakeGPSPlugin</string>
+		<string>KKGPSPlugin</string>
 	</dict>
 	<key>items</key>
 	<array>
@@ -27,7 +27,7 @@
 			<key>default</key>
 			<string></string>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>EditTextCell1</string>
 			<key>label</key>
@@ -35,7 +35,7 @@
 			<key>placeholder</key>
 			<string>Any Text Here</string>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -43,13 +43,13 @@
 			<key>default</key>
 			<string></string>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>SecureEditTextCell2</string>
 			<key>label</key>
 			<string>Secure</string>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -71,7 +71,7 @@
 			<key>default</key>
 			<string></string>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>EditTextCell3</string>
 			<key>keyboard</key>
@@ -81,7 +81,7 @@
 			<key>placeholder</key>
 			<string>Phone Number</string>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -89,7 +89,7 @@
 			<key>default</key>
 			<string></string>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>EditTextCel4</string>
 			<key>keyboard</key>
@@ -99,7 +99,7 @@
 			<key>placeholder</key>
 			<string>Numbers</string>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -121,13 +121,13 @@
 			<key>default</key>
 			<true/>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>SwitchCell5</string>
 			<key>label</key>
 			<string>Switch</string>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -135,7 +135,7 @@
 			<key>default</key>
 			<real>50</real>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>SliderCell6</string>
 			<key>min</key>
@@ -145,7 +145,7 @@
 			<key>showValue</key>
 			<true/>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
 		<dict>
 			<key>cell</key>
@@ -165,7 +165,7 @@
 			<key>cell</key>
 			<string>PSLinkListCell</string>
 			<key>defaults</key>
-			<string>com.0x1306a94.FakeGPS-Plugin</string>
+			<string>com.0x1306a94.KKGPSPlugin</string>
 			<key>key</key>
 			<string>LinkListCell7</string>
 			<key>label</key>
@@ -187,8 +187,9 @@
 			<key>default</key>
 			<integer>1</integer>
 			<key>PostNotification</key>
-			<string>com.0x1306a94.FakeGPS-Plugin-preferencesChanged</string>
+			<string>com.0x1306a94.KKGPSPlugin-preferencesChanged</string>
 		</dict>
+
 		<dict>
 			<key>cell</key>
 			<string>PSGroupCell</string>
@@ -203,6 +204,6 @@
 		</dict>
 	</array>
 	<key>title</key>
-	<string>FakeGPSPlugin</string>
+	<string>KKGPSPlugin</string>
 </dict>
 </plist>
