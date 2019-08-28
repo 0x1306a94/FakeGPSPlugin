@@ -17,6 +17,8 @@
 		3C1D41BB22F415C30091F7B3 /* FakeGPSUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C1D41BA22F415C30091F7B3 /* FakeGPSUITests.m */; };
 		3C2F6823230A5F6E00A1F6ED /* ApplactionHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F6822230A5F6E00A1F6ED /* ApplactionHelper.m */; };
 		3C2F6826230A5FFB00A1F6ED /* Applaction.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F6825230A5FFB00A1F6ED /* Applaction.m */; };
+		3C3A17E923168427006E7E7B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1D417622F414D50091F7B3 /* Foundation.framework */; };
+		3C3A17F323168427006E7E7B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C3A17F223168427006E7E7B /* main.m */; };
 		3C9AA7CD230B7E7E00AF87F4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1D417622F414D50091F7B3 /* Foundation.framework */; };
 		3C9AA7DB230B7E7E00AF87F4 /* KKGPSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C9AA7DA230B7E7E00AF87F4 /* KKGPSPlugin.mm */; };
 		3C9AA7E2230B7EC200AF87F4 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F681E230A509500A1F6ED /* Aspects.m */; };
@@ -91,6 +93,20 @@
 		3C2F688D230A733C00A1F6ED /* ALApplicationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALApplicationList.h; sourceTree = "<group>"; };
 		3C2F688E230A733C00A1F6ED /* AppList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppList.h; sourceTree = "<group>"; };
 		3C2F688F230A733C00A1F6ED /* ALApplicationTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALApplicationTableDataSource.h; sourceTree = "<group>"; };
+		3C3A17E823168426006E7E7B /* FakeGPS.Daemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FakeGPS.Daemon; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C3A17ED23168427006E7E7B /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
+		3C3A17EE23168427006E7E7B /* monkeydev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = monkeydev.entitlements; sourceTree = "<group>"; };
+		3C3A17F123168427006E7E7B /* 0xdeadfa11 */ = {isa = PBXFileReference; lastKnownFileType = text; name = 0xdeadfa11; path = Package/usr/bin/0xdeadfa11; sourceTree = "<group>"; };
+		3C3A17F223168427006E7E7B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3C3A17F523168427006E7E7B /* FakeGPS.Daemon-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FakeGPS.Daemon-Prefix.pch"; sourceTree = "<group>"; };
+		3C3A17F9231684A4006E7E7B /* postinst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = postinst; path = Package/DEBIAN/postinst; sourceTree = "<group>"; };
+		3C3A17FA231684A4006E7E7B /* postrm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = postrm; path = Package/DEBIAN/postrm; sourceTree = "<group>"; };
+		3C3A17FB231684A4006E7E7B /* prerm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = prerm; path = Package/DEBIAN/prerm; sourceTree = "<group>"; };
+		3C3A17FC231684A4006E7E7B /* preinst */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = preinst; path = Package/DEBIAN/preinst; sourceTree = "<group>"; };
+		3C3A1800231684AC006E7E7B /* FakeGPSDaemonReload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FakeGPSDaemonReload.sh; sourceTree = "<group>"; };
+		3C3A1801231684AC006E7E7B /* FakeGPSDaemonUnload.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FakeGPSDaemonUnload.sh; sourceTree = "<group>"; };
+		3C3A1802231684AC006E7E7B /* FakeGPSDaemonLoad.sh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = FakeGPSDaemonLoad.sh; sourceTree = "<group>"; };
+		3C3A1805231684B3006E7E7B /* com.0x1306a94.FakeGPS.Daemon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = com.0x1306a94.FakeGPS.Daemon.plist; sourceTree = "<group>"; };
 		3C9AA7AD230B79A200AF87F4 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		3C9AA7B0230B79A200AF87F4 /* CydiaSubstrate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CydiaSubstrate.framework; path = Library/Frameworks/CydiaSubstrate.framework; sourceTree = DEVELOPER_DIR; };
 		3C9AA7CC230B7E7E00AF87F4 /* KKGPSPlugin.dylib */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.dylib"; includeInIndex = 0; path = KKGPSPlugin.dylib; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -139,6 +155,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C3A17E523168426006E7E7B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C3A17E923168427006E7E7B /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		3C9AA7C8230B7E7E00AF87F4 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -173,6 +197,7 @@
 				3C1D41AE22F415C20091F7B3 /* FakeGPSTests */,
 				3C1D41B922F415C30091F7B3 /* FakeGPSUITests */,
 				3C9AA7CE230B7E7E00AF87F4 /* KKGPSPlugin */,
+				3C3A17EA23168427006E7E7B /* FakeGPS.Daemon */,
 				3C1D417522F414D50091F7B3 /* Frameworks */,
 				3C1D417422F414D50091F7B3 /* Products */,
 				17F999FE4A5668C226432F07 /* Pods */,
@@ -186,6 +211,7 @@
 				3C1D41AB22F415C20091F7B3 /* FakeGPSTests.xctest */,
 				3C1D41B622F415C20091F7B3 /* FakeGPSUITests.xctest */,
 				3C9AA7CC230B7E7E00AF87F4 /* KKGPSPlugin.dylib */,
+				3C3A17E823168426006E7E7B /* FakeGPS.Daemon */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -253,6 +279,108 @@
 				3C2F681C230A3ECB00A1F6ED /* CommonDefs.h */,
 			);
 			path = Common;
+			sourceTree = "<group>";
+		};
+		3C3A17EA23168427006E7E7B /* FakeGPS.Daemon */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17EE23168427006E7E7B /* monkeydev.entitlements */,
+				3C3A17F223168427006E7E7B /* main.m */,
+				3C3A17EB23168427006E7E7B /* Package */,
+				3C3A17F423168427006E7E7B /* Supporting Files */,
+			);
+			path = FakeGPS.Daemon;
+			sourceTree = "<group>";
+		};
+		3C3A17EB23168427006E7E7B /* Package */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A1803231684B3006E7E7B /* Library */,
+				3C3A17FD231684AC006E7E7B /* var */,
+				3C3A17EC23168427006E7E7B /* DEBIAN */,
+				3C3A17EF23168427006E7E7B /* usr */,
+			);
+			name = Package;
+			sourceTree = "<group>";
+		};
+		3C3A17EC23168427006E7E7B /* DEBIAN */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17ED23168427006E7E7B /* control */,
+				3C3A17F9231684A4006E7E7B /* postinst */,
+				3C3A17FA231684A4006E7E7B /* postrm */,
+				3C3A17FC231684A4006E7E7B /* preinst */,
+				3C3A17FB231684A4006E7E7B /* prerm */,
+			);
+			name = DEBIAN;
+			sourceTree = "<group>";
+		};
+		3C3A17EF23168427006E7E7B /* usr */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17F023168427006E7E7B /* bin */,
+			);
+			name = usr;
+			sourceTree = "<group>";
+		};
+		3C3A17F023168427006E7E7B /* bin */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17F123168427006E7E7B /* 0xdeadfa11 */,
+			);
+			name = bin;
+			sourceTree = "<group>";
+		};
+		3C3A17F423168427006E7E7B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17F523168427006E7E7B /* FakeGPS.Daemon-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3C3A17FD231684AC006E7E7B /* var */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17FE231684AC006E7E7B /* root */,
+			);
+			name = var;
+			path = Package/var;
+			sourceTree = "<group>";
+		};
+		3C3A17FE231684AC006E7E7B /* root */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A17FF231684AC006E7E7B /* FakeGPS.Daemon */,
+			);
+			path = root;
+			sourceTree = "<group>";
+		};
+		3C3A17FF231684AC006E7E7B /* FakeGPS.Daemon */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A1800231684AC006E7E7B /* FakeGPSDaemonReload.sh */,
+				3C3A1801231684AC006E7E7B /* FakeGPSDaemonUnload.sh */,
+				3C3A1802231684AC006E7E7B /* FakeGPSDaemonLoad.sh */,
+			);
+			path = FakeGPS.Daemon;
+			sourceTree = "<group>";
+		};
+		3C3A1803231684B3006E7E7B /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A1804231684B3006E7E7B /* LaunchDaemons */,
+			);
+			name = Library;
+			path = Package/Library;
+			sourceTree = "<group>";
+		};
+		3C3A1804231684B3006E7E7B /* LaunchDaemons */ = {
+			isa = PBXGroup;
+			children = (
+				3C3A1805231684B3006E7E7B /* com.0x1306a94.FakeGPS.Daemon.plist */,
+			);
+			path = LaunchDaemons;
 			sourceTree = "<group>";
 		};
 		3C9AA7CE230B7E7E00AF87F4 /* KKGPSPlugin */ = {
@@ -415,6 +543,23 @@
 			productReference = 3C1D41B622F415C20091F7B3 /* FakeGPSUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
+		3C3A17E723168426006E7E7B /* FakeGPS.Daemon */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C3A17F823168427006E7E7B /* Build configuration list for PBXNativeTarget "FakeGPS.Daemon" */;
+			buildPhases = (
+				3C3A17E423168426006E7E7B /* Sources */,
+				3C3A17E523168426006E7E7B /* Frameworks */,
+				3C3A17E623168426006E7E7B /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = FakeGPS.Daemon;
+			productName = FakeGPS.Daemon;
+			productReference = 3C3A17E823168426006E7E7B /* FakeGPS.Daemon */;
+			productType = "com.apple.product-type.tool";
+		};
 		3C9AA7CB230B7E7E00AF87F4 /* KKGPSPlugin */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 3C9AA7DF230B7E7E00AF87F4 /* Build configuration list for PBXNativeTarget "KKGPSPlugin" */;
@@ -452,6 +597,9 @@
 						CreatedOnToolsVersion = 10.2;
 						TestTargetID = 3C1D419322F415C10091F7B3;
 					};
+					3C3A17E723168426006E7E7B = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					3C9AA7CB230B7E7E00AF87F4 = {
 						CreatedOnToolsVersion = 10.2;
 					};
@@ -474,6 +622,7 @@
 				3C1D41AA22F415C20091F7B3 /* FakeGPSTests */,
 				3C1D41B522F415C20091F7B3 /* FakeGPSUITests */,
 				3C9AA7CB230B7E7E00AF87F4 /* KKGPSPlugin */,
+				3C3A17E723168426006E7E7B /* FakeGPS.Daemon */,
 			);
 		};
 /* End PBXProject section */
@@ -527,6 +676,23 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		3C3A17E623168426006E7E7B /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/opt/MonkeyDev/bin/md --xcbp";
 		};
 		3C9AA7CA230B7E7E00AF87F4 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -634,6 +800,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1D41BB22F415C30091F7B3 /* FakeGPSUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3A17E423168426006E7E7B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C3A17F323168427006E7E7B /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1137,6 +1311,60 @@
 			};
 			name = Debug;
 		};
+		3C3A17F623168427006E7E7B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = FakeGPS.Daemon/monkeydev.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RNEQ2XCVJH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeGPS.Daemon/FakeGPS.Daemon-Prefix.pch";
+				INSTALL_PATH = /usr/bin;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MonkeyDevBuildPackageOnAnyBuild = NO;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = localhost;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 2222;
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevkillProcessOnInstall = "";
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"FakeGPS.Daemon\\\"\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		3C3A17F723168427006E7E7B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_ENTITLEMENTS = FakeGPS.Daemon/monkeydev.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RNEQ2XCVJH;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "FakeGPS.Daemon/FakeGPS.Daemon-Prefix.pch";
+				INSTALL_PATH = /usr/bin;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MonkeyDevBuildPackageOnAnyBuild = NO;
+				MonkeyDevClearUiCacheOnInstall = NO;
+				MonkeyDevCopyOnBuild = NO;
+				MonkeyDevDeviceIP = localhost;
+				MonkeyDevDevicePassword = alpine;
+				MonkeyDevDevicePort = 2222;
+				MonkeyDevInstallOnAnyBuild = YES;
+				MonkeyDevInstallOnProfiling = YES;
+				MonkeyDevkillProcessOnInstall = "";
+				OTHER_CFLAGS = "-DTHEOS_INSTANCE_NAME=\"\\\"FakeGPS.Daemon\\\"\"";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
 		3C9AA7E0230B7E7E00AF87F4 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1238,6 +1466,15 @@
 			buildConfigurations = (
 				3C1D41C422F415C30091F7B3 /* Release */,
 				3C1D41C522F415C30091F7B3 /* Debug */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C3A17F823168427006E7E7B /* Build configuration list for PBXNativeTarget "FakeGPS.Daemon" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C3A17F623168427006E7E7B /* Release */,
+				3C3A17F723168427006E7E7B /* Debug */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -1,0 +1,5 @@
+# UNLoad Daemon
+# launchctl unload /Library/LaunchDaemons/com.0x1306a94.FakeGPS.Daemon.plist &> /dev/null
+# When the new daemon ready, automaticly swap.
+bash /var/root/FakeGPS.Daemon/FakeGPSDaemonUnload.sh
+exit 0

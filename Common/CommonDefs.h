@@ -14,6 +14,8 @@ static NSString *const kFakeStopKey      = @"stop";
 static NSString *const kFakeLatitudeKey  = @"latitude";
 static NSString *const kFakeLongitudeKey = @"longitude";
 
+static NSString *const kFakeGPSAPPSKey = @"/var/mobile/Library/Preferences/com.0x1306a94.fake.gps.apps.plist";
+
 #ifdef DEBUG
 #define LOG(fmt, ...) NSLog((@"fake gps: " fmt), ##__VA_ARGS__);
 #else

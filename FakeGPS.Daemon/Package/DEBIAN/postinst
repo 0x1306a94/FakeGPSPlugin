@@ -1,0 +1,10 @@
+
+echo "Install Daemon Permission"
+chown root:wheel /Library/LaunchDaemons/com.0x1306a94.FakeGPS.Daemon.plist
+chmod 0644 /Library/LaunchDaemons/com.0x1306a94.FakeGPS.Daemon.plist
+chmod +x /usr/bin/FakeGPS.Daemon
+
+echo "Reload Daemon"
+bash /var/root/FakeGPS.Daemon/FakeGPSDaemonReload.sh
+
+exit 0
