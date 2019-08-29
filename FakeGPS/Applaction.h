@@ -13,6 +13,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic, strong) NSString *name;
 @property (nonatomic, strong) NSString *bundleIdentifier;
 @property (nonatomic, strong) UIImage *iconImage;
+@property (nonatomic, assign) BOOL on;
 @end
 
 NS_ASSUME_NONNULL_END

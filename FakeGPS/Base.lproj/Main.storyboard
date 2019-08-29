@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="6up-nf-Mti">
     <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="nXM-oH-2Hs">
-                                <rect key="frame" x="64" y="317" width="286.5" height="272"/>
+                                <rect key="frame" x="64" y="310" width="286.5" height="330"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="7JH-tY-8O2">
                                         <rect key="frame" x="0.0" y="0.0" width="286.5" height="40"/>
@@ -64,9 +64,8 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GhV-hQ-lBj">
-                                        <rect key="frame" x="93" y="116" width="100" height="40"/>
+                                        <rect key="frame" x="123" y="116" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="CQ4-bc-vdg"/>
                                             <constraint firstAttribute="height" constant="40" id="gwx-MR-BdU"/>
                                         </constraints>
                                         <state key="normal" title="Save">
@@ -74,9 +73,8 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IW6-MN-tJv">
-                                        <rect key="frame" x="93" y="174" width="100" height="40"/>
+                                        <rect key="frame" x="124" y="174" width="38" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="100" id="ic3-Ww-yrf"/>
                                             <constraint firstAttribute="height" constant="40" id="sda-3q-MkY"/>
                                         </constraints>
                                         <state key="normal" title="Stop">
@@ -84,12 +82,20 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXY-qc-GDg">
-                                        <rect key="frame" x="93" y="232" width="100" height="40"/>
+                                        <rect key="frame" x="124.5" y="232" width="37" height="40"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="40" id="98G-fs-enM"/>
-                                            <constraint firstAttribute="width" constant="100" id="9HC-UU-7VW"/>
                                         </constraints>
                                         <state key="normal" title="公司">
+                                            <color key="titleColor" red="1" green="0.83529411760000005" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zu-vq-hDz">
+                                        <rect key="frame" x="109.5" y="290" width="67" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="MNx-P5-uQP"/>
+                                        </constraints>
+                                        <state key="normal" title="App List">
                                             <color key="titleColor" red="1" green="0.83529411760000005" blue="0.25098039220000001" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                     </button>
@@ -109,7 +115,9 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="8KV-ui-Itg"/>
                     <connections>
+                        <outlet property="appListButton" destination="7Zu-vq-hDz" id="ohE-eu-HgF"/>
                         <outlet property="companyButton" destination="IXY-qc-GDg" id="chZ-Ru-bAW"/>
                         <outlet property="latitudeTextField" destination="f2p-J5-QKe" id="lFF-bl-KgV"/>
                         <outlet property="longitudeTextField" destination="iyc-Yt-GN0" id="v9J-z2-Z5q"/>
@@ -119,6 +127,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="622" y="-536"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mkP-Sa-hpt">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="6up-nf-Mti" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Kjg-o0-Gyo">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="2xi-RY-tge"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0gR-8E-Mp5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65.217391304347828" y="-536.38392857142856"/>
         </scene>
     </scenes>
 </document>

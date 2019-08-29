@@ -7,132 +7,62 @@
 
 #import "Applaction.h"
 #import "ApplactionHelper.h"
+#import "CommonDefs.h"
 
-#include <dirent.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <sys/stat.h>
-#include <sys/types.h>
-#include <unistd.h>
-
-#include <dlfcn.h>
-
-#import "AppList.h"
+#import <notify.h>
 
 @implementation ApplactionHelper
-+ (void)scanApps {
++ (NSArray<Applaction *> *)readInstalledApps {
 
-    char *path = "/Library/MobileSubstrate/DynamicLibraries/AppList.dylib";
-    void *lib  = dlopen(path, RTLD_LAZY);
-    if (lib == NULL) {
-        return;
+    if (![[NSFileManager defaultManager] fileExistsAtPath:kFakeGPSAPPSKey]) return nil;
+
+    NSArray<NSDictionary<NSString *, id> *> *apps = [NSKeyedUnarchiver unarchiveObjectWithFile:kFakeGPSAPPSKey];
+    if (apps.count == 0) return nil;
+    NSArray<NSString *> *injectionBundleIdentifiers = nil;
+    if ([[NSFileManager defaultManager] fileExistsAtPath:kInjectionPlistPath]) {
+        NSDictionary *injectionInfo = [NSDictionary dictionaryWithContentsOfFile:kInjectionPlistPath];
+        injectionBundleIdentifiers  = [injectionInfo valueForKeyPath:@"Filter.Bundles"];
     }
 
-	NSObject *sharedApplicationList = [NSClassFromString(@"ALApplicationList") performSelector:@selector(sharedApplicationList)];
-
-	NSPredicate *predicate = [NSPredicate predicateWithFormat:@"isSystemApplication = TRUE"];
-	BOOL onlyVisible       = YES;
-	NSArray *sortedDisplayIdentifiers;
-
-	SEL sel                            = @selector(applicationsFilteredUsingPredicate:onlyVisible:titleSortedIdentifiers:);
-	NSMethodSignature *methodSignature = [sharedApplicationList methodSignatureForSelector:sel];
-	NSInvocation *invoke               = [NSInvocation invocationWithMethodSignature:methodSignature];
-	[invoke setSelector:sel];
-	[invoke setTarget:sharedApplicationList];
-
-	[invoke setArgument:&predicate atIndex:2];
-	[invoke setArgument:&onlyVisible atIndex:3];
-	[invoke setArgument:&sortedDisplayIdentifiers atIndex:4];
-	[invoke invoke];
-
-	void *returnValue;
-	[invoke getReturnValue:&returnValue];
-	NSDictionary *applications = (__bridge NSDictionary *)returnValue;
-
-	NSString *pathOfApplications;
-	if ([[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0) {
-		pathOfApplications = @"/var/containers/Bundle/Application";
-	} else {
-		pathOfApplications = @"/var/mobile/Applications";
-	}
-	NSLog(@"scan begin");
-
-	DIR *ptr_dir = opendir(pathOfApplications.UTF8String);
-
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-	// all applications
-	NSArray *arrayOfApplications = [[NSFileManager defaultManager] subpathsOfDirectoryAtPath:pathOfApplications error:nil];
-
-	for (NSString *applicationDir in arrayOfApplications) {
-		// path of an application
-		NSString *pathOfApplication    = [pathOfApplications stringByAppendingPathComponent:applicationDir];
-		NSArray *arrayOfSubApplication = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:pathOfApplication error:nil];
-		// seek for *.app
-		for (NSString *applicationSubDir in arrayOfSubApplication) {
-			if ([applicationSubDir hasSuffix:@".app"]) {  // *.app
-				NSString *path      = [pathOfApplication stringByAppendingPathComponent:applicationSubDir];
-				NSString *imagePath = [pathOfApplication stringByAppendingPathComponent:applicationSubDir];
-				path                = [path stringByAppendingPathComponent:@"Info.plist"];
-				// so you get the Info.plist in the dict
-				NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:path];
-				if ([[dict allKeys] containsObject:@"CFBundleIdentifier"] && [[dict allKeys] containsObject:@"CFBundleDisplayName"]) {
-					NSArray *values = [dict allValues];
-					NSString *icon;
-					for (id obj in values) {
-						icon = [self getIcon:obj withPath:imagePath];
-						if (icon.length > 0) {
-							imagePath = [imagePath stringByAppendingPathComponent:icon];
-						}
-					}
-				}
-			}
-		}
-	}
+    NSMutableArray<Applaction *> *models = [NSMutableArray<Applaction *> arrayWithCapacity:apps.count];
+    [apps enumerateObjectsUsingBlock:^(NSDictionary<NSString *, id> *_Nonnull obj, NSUInteger idx, BOOL *_Nonnull stop) {
+        Applaction *m      = [[Applaction alloc] init];
+        m.bundleIdentifier = obj[kAppBundleIdentifierKey];
+        m.name             = obj[kAppNameKey];
+        m.iconImage        = obj[kAppIconKey];
+        if (injectionBundleIdentifiers.count > 0) {
+            m.on = [injectionBundleIdentifiers containsObject:m.bundleIdentifier];
+        } else {
+            m.on = NO;
+        }
+        [models addObject:m];
+    }];
+    return models.copy;
 }
 
-+ (NSString *)getIcon:(id)value withPath:(NSString *)imagePath {
-	if ([value isKindOfClass:[NSString class]]) {
-		NSRange range     = [value rangeOfString:@"png"];
-		NSRange iconRange = [value rangeOfString:@"icon"];
-		NSRange IconRange = [value rangeOfString:@"Icon"];
-		if (range.length > 0) {
-			NSString *path = [imagePath stringByAppendingPathComponent:value];
-			UIImage *image = [UIImage imageWithContentsOfFile:path];
-			if (image != nil && image.size.width > 50 && image.size.height > 50) {
-				return value;
-			}
-		} else if (iconRange.length > 0) {
-			NSString *imgUrl = [NSString stringWithFormat:@"%@.png", value];
-			NSString *path   = [imagePath stringByAppendingPathComponent:imgUrl];
-			UIImage *image   = [UIImage imageWithContentsOfFile:path];
-			if (image != nil && image.size.width > 50 && image.size.height > 50) {
-				return imgUrl;
-			}
-		} else if (IconRange.length > 0) {
-			NSString *imgUrl = [NSString stringWithFormat:@"%@.png", value];
-			NSString *path   = [imagePath stringByAppendingPathComponent:imgUrl];
-			UIImage *image   = [UIImage imageWithContentsOfFile:path];
-			if (image != nil && image.size.width > 50 && image.size.height > 50) {
-				return imgUrl;
-			}
-		}
-	} else if ([value isKindOfClass:[NSDictionary class]]) {
-		NSDictionary *dict = (NSDictionary *)value;
-		for (id subValue in [dict allValues]) {
-			NSString *str = [self getIcon:subValue withPath:imagePath];
-			if (![str isEqualToString:@""]) {
-				return str;
-			}
-		}
-	} else if ([value isKindOfClass:[NSArray class]]) {
-		for (id subValue in value) {
-			NSString *str = [self getIcon:subValue withPath:imagePath];
-			if (![str isEqualToString:@""]) {
-				return str;
-			}
-		}
-	}
-	return @"";
++ (UIImage *)fetchAppIcon:(NSString *)bundleIdentifier {
+    if (bundleIdentifier.length == 0) return nil;
+    {
+        // https://github.com/nst/iOS-Runtime-Headers/blob/master/PrivateFrameworks/UIKitCore.framework/UIImage.h
+        SEL sel   = @selector(_applicationIconImageForBundleIdentifier:format:scale:);
+        id target = UIImage.class;
+        void *returnValue;
+        NSMethodSignature *signature = [UIImage methodSignatureForSelector:sel];
+        NSInvocation *invocation     = [NSInvocation invocationWithMethodSignature:signature];
+        [invocation setSelector:sel];
+        [invocation setTarget:target];
+
+        int format    = 2;  // 60x60
+        CGFloat scale = 2;
+        [invocation setArgument:&bundleIdentifier atIndex:2];
+        [invocation setArgument:&format atIndex:3];
+        [invocation setArgument:&scale atIndex:4];
+
+        [invocation invoke];
+        [invocation getReturnValue:&returnValue];
+        UIImage *icon = (__bridge UIImage *)returnValue;
+        return icon;
+    }
 }
 @end
+

@@ -16,12 +16,15 @@
 #import "ApplactionHelper.h"
 #import "CommonDefs.h"
 
+#import "AppListViewController.h"
+
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITextField *latitudeTextField;
 @property (weak, nonatomic) IBOutlet UITextField *longitudeTextField;
 @property (weak, nonatomic) IBOutlet UIButton *saveButton;
 @property (weak, nonatomic) IBOutlet UIButton *stopButton;
 @property (weak, nonatomic) IBOutlet UIButton *companyButton;
+@property (weak, nonatomic) IBOutlet UIButton *appListButton;
 @property (nonatomic, strong) NSMutableDictionary<NSString *, id> *fakeGPSInfo;
 @end
 
@@ -93,16 +96,13 @@
         }
         return [RACSignal empty];
     }];
-    //    [ApplactionHelper scanApps];
-    //    [self all];
 
-    if ([[NSFileManager defaultManager] fileExistsAtPath:kFakeGPSAPPSKey]) {
-        NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:kFakeGPSAPPSKey];
-        NSLog(@"APP: \n%@", dict);
-        NSString *message = [NSString stringWithCString:[dict.description cStringUsingEncoding:NSUTF8StringEncoding] encoding:NSNonLossyASCIIStringEncoding];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"读取APP列表成功" message:message delegate:nil cancelButtonTitle:nil otherButtonTitles:@"OK", nil];
-        [alert show];
-    }
+    self.appListButton.rac_command = [[RACCommand alloc] initWithSignalBlock:^RACSignal *_Nonnull(id _Nullable input) {
+        @strongify(self);
+        AppListViewController *vc = [[AppListViewController alloc] init];
+        [self.navigationController pushViewController:vc animated:YES];
+        return [RACSignal empty];
+    }];
 }
 
 - (void)updateState {
@@ -131,38 +131,5 @@
     [hud hideAnimated:YES afterDelay:3.0];
 }
 
-- (void)all {
-    NSMethodSignature *methodSignature = [NSClassFromString(@"LSApplicationWorkspace") methodSignatureForSelector:NSSelectorFromString(@"defaultWorkspace")];
-    NSInvocation *invoke               = [NSInvocation invocationWithMethodSignature:methodSignature];
-    [invoke setSelector:NSSelectorFromString(@"defaultWorkspace")];
-    [invoke setTarget:NSClassFromString(@"LSApplicationWorkspace")];
-
-    [invoke invoke];
-
-    void *returnValue;
-    [invoke getReturnValue:&returnValue];
-    NSObject *objc = (__bridge NSObject *)returnValue;
-
-    NSMethodSignature *installedPluginsmethodSignature = [NSClassFromString(@"LSApplicationWorkspace") instanceMethodSignatureForSelector:NSSelectorFromString(@"installedPlugins")];
-    NSInvocation *installed                            = [NSInvocation invocationWithMethodSignature:installedPluginsmethodSignature];
-    [installed setSelector:NSSelectorFromString(@"installedPlugins")];
-    [installed setTarget:objc];
-
-    [installed invoke];
-    [installed getReturnValue:&returnValue];
-    NSArray *arr = (__bridge NSArray *)returnValue;
-    for (NSObject *objc in arr) {
-
-        NSMethodSignature *installedPluginsmethodSignature = [NSClassFromString(@"LSPlugInKitProxy") instanceMethodSignatureForSelector:NSSelectorFromString(@"containingBundle")];
-        NSInvocation *installed                            = [NSInvocation invocationWithMethodSignature:installedPluginsmethodSignature];
-        [installed setSelector:NSSelectorFromString(@"containingBundle")];
-        [installed setTarget:objc];
-
-        [installed invoke];
-        [installed getReturnValue:&returnValue];
-        NSObject *app = (__bridge NSObject *)returnValue;
-        NSLog(@"%@", app);
-    }
-}
 @end
 

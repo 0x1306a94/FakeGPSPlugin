@@ -23,8 +23,11 @@
 		3C9AA7DB230B7E7E00AF87F4 /* KKGPSPlugin.mm in Sources */ = {isa = PBXBuildFile; fileRef = 3C9AA7DA230B7E7E00AF87F4 /* KKGPSPlugin.mm */; };
 		3C9AA7E2230B7EC200AF87F4 /* Aspects.m in Sources */ = {isa = PBXBuildFile; fileRef = 3C2F681E230A509500A1F6ED /* Aspects.m */; };
 		3C9AA7E3230B7F7F00AF87F4 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C1D418E22F414EA0091F7B3 /* CoreLocation.framework */; };
-		3C9AA7EC230B8C6700AF87F4 /* jelbrekLib.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9AA7EA230B8C6700AF87F4 /* jelbrekLib.dylib */; };
-		3C9AA7ED230B8C7900AF87F4 /* jelbrekLib.dylib in Embed Libraries */ = {isa = PBXBuildFile; fileRef = 3C9AA7EA230B8C6700AF87F4 /* jelbrekLib.dylib */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		3CB7719123176A3000B7E9DA /* AppListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7718F23176A3000B7E9DA /* AppListViewController.m */; };
+		3CB7719223176A3000B7E9DA /* AppListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7719023176A3000B7E9DA /* AppListViewController.xib */; };
+		3CB7719623176A9000B7E9DA /* AppListTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 3CB7719423176A9000B7E9DA /* AppListTableViewCell.m */; };
+		3CB7719723176A9000B7E9DA /* AppListTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3CB7719523176A9000B7E9DA /* AppListTableViewCell.xib */; };
+		3CB771982317779200B7E9DA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C9AA7AD230B79A200AF87F4 /* UIKit.framework */; };
 		AB4BDB579119B6C4FA46AAE0 /* Pods_FakeGPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0ACB89EAFF44E82274FB2A99 /* Pods_FakeGPS.framework */; };
 		D6C66EE336B8AA21B34552EC /* Pods_FakeGPSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A35FA84088953F07E531BD09 /* Pods_FakeGPSUITests.framework */; };
 		DEFF2379A6E7CF2CC5FB3B53 /* Pods_FakeGPSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC044B1CAE9614800968C6D /* Pods_FakeGPSTests.framework */; };
@@ -54,7 +57,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				3C9AA7ED230B8C7900AF87F4 /* jelbrekLib.dylib in Embed Libraries */,
 			);
 			name = "Embed Libraries";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -89,10 +91,6 @@
 		3C2F6822230A5F6E00A1F6ED /* ApplactionHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ApplactionHelper.m; sourceTree = "<group>"; };
 		3C2F6824230A5FFB00A1F6ED /* Applaction.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Applaction.h; sourceTree = "<group>"; };
 		3C2F6825230A5FFB00A1F6ED /* Applaction.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Applaction.m; sourceTree = "<group>"; };
-		3C2F688C230A733C00A1F6ED /* ALValueCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALValueCell.h; sourceTree = "<group>"; };
-		3C2F688D230A733C00A1F6ED /* ALApplicationList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALApplicationList.h; sourceTree = "<group>"; };
-		3C2F688E230A733C00A1F6ED /* AppList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppList.h; sourceTree = "<group>"; };
-		3C2F688F230A733C00A1F6ED /* ALApplicationTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ALApplicationTableDataSource.h; sourceTree = "<group>"; };
 		3C3A17E823168426006E7E7B /* FakeGPS.Daemon */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FakeGPS.Daemon; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C3A17ED23168427006E7E7B /* control */ = {isa = PBXFileReference; lastKnownFileType = text; name = control; path = Package/DEBIAN/control; sourceTree = "<group>"; };
 		3C3A17EE23168427006E7E7B /* monkeydev.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = monkeydev.entitlements; sourceTree = "<group>"; };
@@ -117,8 +115,12 @@
 		3C9AA7D9230B7E7E00AF87F4 /* KKGPSPlugin-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "KKGPSPlugin-Prefix.pch"; sourceTree = "<group>"; };
 		3C9AA7DA230B7E7E00AF87F4 /* KKGPSPlugin.mm */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.objcpp; path = KKGPSPlugin.mm; sourceTree = "<group>"; };
 		3C9AA7DE230B7E7E00AF87F4 /* KKGPSPlugin.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = KKGPSPlugin.plist; path = Package/Library/MobileSubstrate/DynamicLibraries/KKGPSPlugin.plist; sourceTree = "<group>"; };
-		3C9AA7EA230B8C6700AF87F4 /* jelbrekLib.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; path = jelbrekLib.dylib; sourceTree = "<group>"; };
-		3C9AA7EB230B8C6700AF87F4 /* jelbrekLib.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = jelbrekLib.h; sourceTree = "<group>"; };
+		3CB7718E23176A3000B7E9DA /* AppListViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppListViewController.h; sourceTree = "<group>"; };
+		3CB7718F23176A3000B7E9DA /* AppListViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppListViewController.m; sourceTree = "<group>"; };
+		3CB7719023176A3000B7E9DA /* AppListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppListViewController.xib; sourceTree = "<group>"; };
+		3CB7719323176A9000B7E9DA /* AppListTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppListTableViewCell.h; sourceTree = "<group>"; };
+		3CB7719423176A9000B7E9DA /* AppListTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppListTableViewCell.m; sourceTree = "<group>"; };
+		3CB7719523176A9000B7E9DA /* AppListTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AppListTableViewCell.xib; sourceTree = "<group>"; };
 		3D6FB76C9C70B63F72481026 /* Pods-FakeGPSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSUITests.release.xcconfig"; path = "Target Support Files/Pods-FakeGPSUITests/Pods-FakeGPSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		82F8315CAC01D847918A9FB6 /* Pods-FakeGPSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSTests.release.xcconfig"; path = "Target Support Files/Pods-FakeGPSTests/Pods-FakeGPSTests.release.xcconfig"; sourceTree = "<group>"; };
 		8D8BDB6B561B5CF97F307322 /* Pods-FakeGPSUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FakeGPSUITests.debug.xcconfig"; path = "Target Support Files/Pods-FakeGPSUITests/Pods-FakeGPSUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -134,7 +136,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C9AA7EC230B8C6700AF87F4 /* jelbrekLib.dylib in Frameworks */,
 				AB4BDB579119B6C4FA46AAE0 /* Pods_FakeGPS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -159,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CB771982317779200B7E9DA /* UIKit.framework in Frameworks */,
 				3C3A17E923168427006E7E7B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,7 +193,6 @@
 		3C1D416922F414D50091F7B3 = {
 			isa = PBXGroup;
 			children = (
-				3C9AA7E4230B88B100AF87F4 /* jelbrekLib */,
 				3C2F681B230A3EB500A1F6ED /* Common */,
 				3C1D419522F415C10091F7B3 /* FakeGPS */,
 				3C1D41AE22F415C20091F7B3 /* FakeGPSTests */,
@@ -242,10 +243,12 @@
 				3C2F6822230A5F6E00A1F6ED /* ApplactionHelper.m */,
 				3C2F6824230A5FFB00A1F6ED /* Applaction.h */,
 				3C2F6825230A5FFB00A1F6ED /* Applaction.m */,
-				3C2F688D230A733C00A1F6ED /* ALApplicationList.h */,
-				3C2F688F230A733C00A1F6ED /* ALApplicationTableDataSource.h */,
-				3C2F688C230A733C00A1F6ED /* ALValueCell.h */,
-				3C2F688E230A733C00A1F6ED /* AppList.h */,
+				3CB7718E23176A3000B7E9DA /* AppListViewController.h */,
+				3CB7718F23176A3000B7E9DA /* AppListViewController.m */,
+				3CB7719023176A3000B7E9DA /* AppListViewController.xib */,
+				3CB7719323176A9000B7E9DA /* AppListTableViewCell.h */,
+				3CB7719423176A9000B7E9DA /* AppListTableViewCell.m */,
+				3CB7719523176A9000B7E9DA /* AppListTableViewCell.xib */,
 				3C1D419C22F415C10091F7B3 /* Main.storyboard */,
 				3C1D419F22F415C20091F7B3 /* Assets.xcassets */,
 				3C1D41A122F415C20091F7B3 /* LaunchScreen.storyboard */,
@@ -463,15 +466,6 @@
 			name = DynamicLibraries;
 			sourceTree = "<group>";
 		};
-		3C9AA7E4230B88B100AF87F4 /* jelbrekLib */ = {
-			isa = PBXGroup;
-			children = (
-				3C9AA7EA230B8C6700AF87F4 /* jelbrekLib.dylib */,
-				3C9AA7EB230B8C6700AF87F4 /* jelbrekLib.h */,
-			);
-			path = jelbrekLib;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -633,7 +627,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				3C1D41A322F415C20091F7B3 /* LaunchScreen.storyboard in Resources */,
+				3CB7719723176A9000B7E9DA /* AppListTableViewCell.xib in Resources */,
 				3C1D41A022F415C20091F7B3 /* Assets.xcassets in Resources */,
+				3CB7719223176A3000B7E9DA /* AppListViewController.xib in Resources */,
 				3C1D419E22F415C10091F7B3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -781,6 +777,8 @@
 			files = (
 				3C2F6823230A5F6E00A1F6ED /* ApplactionHelper.m in Sources */,
 				3C2F6826230A5FFB00A1F6ED /* Applaction.m in Sources */,
+				3CB7719123176A3000B7E9DA /* AppListViewController.m in Sources */,
+				3CB7719623176A9000B7E9DA /* AppListTableViewCell.m in Sources */,
 				3C1D419B22F415C10091F7B3 /* ViewController.m in Sources */,
 				3C1D41A622F415C20091F7B3 /* main.m in Sources */,
 				3C1D419822F415C10091F7B3 /* AppDelegate.m in Sources */,
@@ -974,10 +972,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/jelbrekLib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.test.com.0x1306a94.FakeGPS;
@@ -1046,10 +1041,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-					"$(PROJECT_DIR)/jelbrekLib",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = com.taihe.test.com.0x1306a94.FakeGPS;

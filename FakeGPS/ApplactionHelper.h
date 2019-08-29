@@ -9,8 +9,11 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class Applaction;
+
 @interface ApplactionHelper : NSObject
-+ (void)scanApps;
++ (NSArray<Applaction *> *)readInstalledApps;
 @end
 
 NS_ASSUME_NONNULL_END
+
